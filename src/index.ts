@@ -1,11 +1,12 @@
-const express = require('express');
+import express from 'express';
+import routes from './routes/index';
+
 const app = express();
 const port = 3000;
 
-app.get('/', (req: any, res: any) => {
-  res.send('Hello World! @JC')
-});
+app.use('/api', routes);
 
+// Start the Express Server
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Server started at http://localhost:${port}`);
 });
