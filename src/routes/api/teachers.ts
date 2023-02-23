@@ -1,7 +1,8 @@
 import express from 'express';
+import logger from '../../utilities/logger';
 const teachers = express.Router();
 
-teachers.get('/', (req: any, res: any) => { 
+teachers.get('/', logger, (req: express.Request, res: express.Response) => { 
     res.send('Teachers route')
 });
 

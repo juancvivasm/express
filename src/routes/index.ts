@@ -1,9 +1,10 @@
 import express from 'express';
+import logger from '../utilities/logger';
 import teachers from './api/teachers';
 import students from './api/students';
 const routes = express.Router();
 
-routes.get('/', (req: any, res: any) => { 
+routes.get('/', logger, (req: express.Request, res: express.Response) => { 
     res.send('Main API route')
 });
 
